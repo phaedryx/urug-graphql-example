@@ -6,12 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
-
 gem 'devise', '~> 4.3'
-
 gem 'graphql', '~> 1.6', '>= 1.6.8'
-gem 'graphiql-rails', '~> 1.4', '>= 1.4.5'
-
 gem 'jbuilder', '~> 2.5'
 gem 'minitest-rails', '~> 3.0'
 gem 'pg', '~> 0.18'
@@ -28,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'graphiql-rails', '~> 1.4', '>= 1.4.5'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
