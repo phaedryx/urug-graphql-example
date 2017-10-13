@@ -1,7 +1,10 @@
 <div id="page">
   <div class="grid-x">
     <h1>Welcome</h1>
-
-    <%= link_to 'GraphiQL', graphiql_rails_path %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if Rails.env.development? %>
+      <%= link_to_if  'GraphiQL', graphiql_rails_path %>
+    <% end %>
   </div>
 </div>
