@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   has_many :bookmarks
   has_many :links, through: :bookmarks
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
