@@ -25,6 +25,10 @@ Types::UserType = GraphQL::ObjectType.define do
   field :created_at, !types.String
   field :updated_at, !types.String
 
-  field :bookmarks, types[Types::BookmarkType]
-  field :links, types[Types::LinkType]
+  field :bookmarks, types[Types::BookmarkType] do
+    preload :bookmarks
+  end
+  field :links, types[Types::LinkType] do
+    preload :links
+  end
 end

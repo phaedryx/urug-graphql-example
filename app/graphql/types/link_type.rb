@@ -9,6 +9,10 @@ Types::LinkType = GraphQL::ObjectType.define do
   field :popular, types.Boolean do
     resolve ->(obj, _args, _ctx) { obj.bookmarks.count >= POPULARITY_THRESHOLD }
   end
-  field :bookmarks, types[Types::BookmarkType]
-  field :users, types[Types::UserType]
+  field :bookmarks, types[Types::BookmarkType] do
+    preload :bookmarks
+  end
+  field :users, types[Types::UserType] do
+    preload :users
+  end
 end

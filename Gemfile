@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'devise', '~> 4.3'
 gem 'graphql', '~> 1.6', '>= 1.6.8'
+gem 'graphql-preload', '~> 1.0', '>= 1.0.3'
 gem 'jbuilder', '~> 2.5'
 gem 'minitest-rails', '~> 3.0'
 gem 'pg', '~> 0.18'

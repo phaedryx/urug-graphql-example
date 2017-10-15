@@ -5,8 +5,12 @@ Types::BookmarkType = GraphQL::ObjectType.define do
   field :id, !types.ID
   field :created_at, !types.String
   field :updated_at, !types.String
-
   field :description, types.String
-  field :user, Types::UserType
-  field :link, Types::LinkType
+
+  field :user, Types::UserType do
+    preload :user
+  end
+  field :link, Types::LinkType do
+    preload :link
+  end
 end
