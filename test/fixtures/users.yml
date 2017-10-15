@@ -1,2 +1,8 @@
 bob:
+  first_name: Bob
+  last_name: Ross
   email: bob@example.com
+tony:
+  first_name: Tony
+  last_name: Stark
+  email: tony@starkindustries.com

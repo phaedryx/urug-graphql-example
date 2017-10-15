@@ -12,4 +12,8 @@ Types::QueryType = GraphQL::ObjectType.define do
   # a resolver function object that can be re-used (and tested)
   field :link, Types::LinkType, function: Functions::FindFunction.new(Link)
   field :bookmark, Types::BookmarkType, function: Functions::FindFunction.new(Bookmark)
+
+  field :users, types[Types::UserType], function: Functions::AllFunction.new(User)
+  field :bookmarks, types[Types::BookmarkType], function: Functions::AllFunction.new(Bookmark)
+  field :links, types[Types::LinkType], function: Functions::AllFunction.new(Link)
 end

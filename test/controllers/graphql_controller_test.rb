@@ -16,6 +16,15 @@ describe GraphqlController do
     assert_equal({'link' => {'url' => 'https://www.google.com'}}, data)
   end
 
+  it 'should be able to find all users' do
+    post graphql_url, params: {query: '{users{full_name}}'}
+    data = parse_response(@response)
+
+    assert_equal({'users' => [
+      {'full_name' => 'Bob Ross'}, {'full_name' => 'Tony Stark'}
+    ]}, data)
+  end
+
   def parse_response(response)
     JSON.parse(response.body).fetch('data')
   rescue KeyError
